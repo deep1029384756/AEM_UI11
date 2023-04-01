@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Static Trending Insights"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <darkTheme
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./isDarkTheme"
+                                                text="Enable Dark Theme"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <cards
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldDescription="Maximum 8 cards are allowed"
+                                                fieldLabel="Add Insights Cards"
+                                                required="{Boolean}true">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./cards">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <imageUpload
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                            allowUpload="{Boolean}false"
+                                                            autoStart="{Boolean}false"
+                                                            class="cq-droptarget"
+                                                            fieldLabel="Upload Background Image"
+                                                            fileReferenceParameter="./fileReference"
+                                                            mimeTypes="[image/*]"
+                                                            name="./name"
+                                                            required="{Boolean}true"
+                                                            uploadUrl="${suffix.path}"
+                                                            useHTML5="{Boolean}true"/>
+                                                        <altText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Alternate text"
+                                                            name="./alt"/>
+                                                        <tagLabel
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            emptyText="Enter tag label here"
+                                                            fieldLabel="Tag Label"
+                                                            name="./tagLabel"/>
+                                                        <description
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                            emptyText="Enter description here"
+                                                            fieldLabel="Description"
+                                                            name="./description"
+                                                            rows="{Long}2"/>
+                                                        <pagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            emptyText="Select page path here"
+                                                            fieldLabel="Page Path"
+                                                            name="./pagePath"/>
+                                                    </items>
+                                                </field>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    max="8"/>
+                                            </cards>
+                                        
+                                        </items>
+                                    </container>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

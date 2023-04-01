@@ -1,0 +1,16 @@
+<sly data-sly-test="${resource.hasChildren}">
+  <!-- HTML Code Here-->
+   ${properties.isDarkTheme}<br>
+     <sly data-sly-list="${resource.listChildren}">
+        <sly data-sly-test="${item.name == 'cards'}" data-sly-list.card="${item.listChildren}">
+            ${card.alt}<br>
+              ${card.description}<br>
+              ${card.fileReference}<br>
+              ${card.tagLabel}<br>
+              ${card.pagePath}<br>
+          <sly>
+      </sly>
+  </sly>
+  <sly data-sly-test="${!resource.hasChildren && wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Static Trending Insights"></div>
+  </sly>
